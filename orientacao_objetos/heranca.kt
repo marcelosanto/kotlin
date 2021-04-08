@@ -11,12 +11,18 @@ fun main() {
 }
 
 open class Animal {
-  fun dormir(){
+  // open = public
+  open fun dormir(){
     println("Dormir")
   }
 }
 
 class Cachorro: Animal() {
+
+  // sobrescrita de metodos herdados
+  override fun dormir(){
+    println("O Cachorro esta dormindo")
+  }
 
   fun latir() {
     println("O Cachorro está latindo")
@@ -28,6 +34,10 @@ class Cachorro: Animal() {
 
 class Passaro: Animal() {
 
+  // sobrescrita de metodos herdados
+  override fun dormir(){
+    println("O Passaro esta dormindo")
+  }
   
   fun voando() {
     println("O Passaro está voando")
