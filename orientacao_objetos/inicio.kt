@@ -1,32 +1,34 @@
 fun main() {
 
-  val carro = Carro()
-  carro.cor = "Azul"
-  println(carro.cor)
-
-  carro.abrirPorta()
-  carro.marchas()
+  val carro = Carro("Preto", 1.59)
+  carro.detalhesDoCarro()
 
 }
 
-class Carro {
+class Carro /*(cor: String, altura: Double)*/{
+
   var cor: String = "" // Atributo - Caracteristica do objeto
+  var altura: Double
+
+  constructor(cor: String, altura: Double){
+    this.cor = cor
+    this.altura = altura
+  }
+
+  // init{
+  //   this.cor = cor
+  //   this.altura = altura
+  // }
 
   //Ações - Metodos
+
+  fun detalhesDoCarro(){
+    println("Cor: $cor, Altura: $altura")
+  }
+
   fun abrirPorta() {
     println("Abrir a porta do carro")
   }
 
-  fun primeraMarcha() {
-    println("Passando a primera marcha")
-  }
-
-  fun segundaMarcha() {
-    println("Passando a segunda marcha")
-  }
-
-  fun marchas() {
-    this.primeraMarcha()
-    this.segundaMarcha()
-  }
+  
 }
